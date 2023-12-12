@@ -113,13 +113,52 @@ for (var i = 1; i < finances.length; i++) {
   }
 }
 
+var totalCash = 0;
+
+  for (i = 0; i < finances.length; i++) {
+
+    totalCash = finances[i][1] + totalCash; 
+
+    let averageChange = totalChange / (finances.length - 1);
+
 var maxProfit = 0;
 for (i=0; 1 < (finances.lenght -1); i++) {
   maxProfit = (finances[i][1]-finances[i][1]);
 }
+var maxLoss= Infinity;
+  }
+
+//Greatest Increase
+var greatestIncrease = 0; // initialize the variable to store the greatest increase
+var dateWithGreatestIncrease = ''; // initialize the variable to store the date with the greatest increase
+
+for (var i = 1; i < finances.length; i++) {
+ var currentProfit = finances[i][1];
+ var previousProfit = finances[i - 1][1];
+ var increase = currentProfit - previousProfit;
+
+ if (increase > greatestIncrease) {
+   greatestIncrease = increase;
+   dateWithGreatestIncrease = finances[i][0];
+ }
+}
 
 
+// Greatest Decrease
 
+var maxDecrease = 0;
+var decreaseMonth = '';
+
+for (var i = 1; i < finances.length; i++) {
+ var currentProfit = finances[i][1];
+ var previousProfit = finances[i - 1][1];
+ var decrease = currentProfit - previousProfit;
+
+ if (decrease < maxDecrease) {
+   maxDecrease = decrease;
+   decreaseMonth = finances[i][0];
+ }
+}
 
 console.log("Financial Analysis");
 console.log("---------------");
