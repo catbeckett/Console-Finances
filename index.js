@@ -106,58 +106,20 @@ for (var i = 1; i < finances.length; i++) {
   let currentChange = (finances[i][1] - finances[i-1][1]);
   totalChange += (currentChange)
 
-  if (currentChange <0 && currentChange < maxLoss) {
+  if (currentChange <0 && currentChange < maxLoss){
     //New low
   } else if (currentChange > 0 && currentChange > maxProfit) {
     //New high
   }
 }
-var 
-
-let totalCash = 0;
-
-  for (i = 0; i < finances.length; i++) {
-
-    totalCash = finances[i][1] + totalCash; 
-
-  }
-
-let totalChange = 0;
-
-for (i = 0; i < (finances.length - 1); i++ ) {
-
-totalChange = (finances[i+1][1] - finances[i][1]) + totalChange;
-
-}
-
-let averageChange = totalChange / (finances.length - 1);
 
 var maxProfit = 0;
 for (i=0; 1 < (finances.lenght -1); i++) {
   maxProfit = (finances[i][1]-finances[i][1]);
-
 }
 
 
 
-console.log('Financial Analysis');
-console.log('-------------------');
-console.log('Total Months:${finances.length}');
-console.log('total: $${totalCash} ${var}');
-console.log('Average Change: ${averagechange.toFixed(2)}')
-console.log('Greatest Increase in Profits/Losses: ${}');
-console.log('Greatest Decrease in Profits/Losses: ${}');
-
-
-
-
-console.log(finances[0][1]);
-
-finances[0][1]
-finances[1][1]
-finances[2][1]
-a = 0
-a++
 
 console.log("Financial Analysis");
 console.log("---------------");
