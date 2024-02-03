@@ -93,77 +93,67 @@ var finances = [
 // Max change
 // Min change
 
+// Total Months
 var totalMonths = finances.length;
+
+// Total Profit
 var totalProfit = 0;
 for (var i = 0; i < finances.length; i++) {
   totalProfit += finances[i][1];
 }
 
+// Average change
 var totalChange = 0;
 var maxChange = -Infinity;
 var minChange = Infinity;
-for (var i = 1; i < finances.length; i++) {
-  let currentChange = (finances[i][1] - finances[i-1][1]);
-  totalChange += (currentChange)
 
-  if (currentChange <0 && currentChange < maxLoss){
-    //New low
-  } else if (currentChange > 0 && currentChange > maxProfit) {
-    //New high
+for (var i = 1; i < finances.length; i++) {
+  let currentChange = finances[i][1] - finances[i - 1][1];
+  totalChange += currentChange;
+
+  if (currentChange < 0 && currentChange < minChange) {
+    minChange = currentChange;
+  } else if (currentChange > 0 && currentChange > maxChange) {
+    maxChange = currentChange;
   }
 }
 
-var totalCash = 0;
+var averageChange = totalChange / (totalMonths - 1);
 
-  for (i = 0; i < finances.length; i++) {
-
-    totalCash = finances[i][1] + totalCash; 
-
-    let averageChange = totalChange / (finances.length - 1);
-
-var maxProfit = 0;
-for (i=0; 1 < (finances.lenght -1); i++) {
-  maxProfit = (finances[i][1]-finances[i][1]);
-}
-var maxLoss= Infinity;
-  }
-
-//Greatest Increase
-var greatestIncrease = 0; // initialize the variable to store the greatest increase
-var dateWithGreatestIncrease = ''; // initialize the variable to store the date with the greatest increase
+// Greatest Increase
+var greatestIncrease = 0;
+var dateWithGreatestIncrease = '';
 
 for (var i = 1; i < finances.length; i++) {
- var currentProfit = finances[i][1];
- var previousProfit = finances[i - 1][1];
- var increase = currentProfit - previousProfit;
+  var currentProfit = finances[i][1];
+  var previousProfit = finances[i - 1][1];
+  var increase = currentProfit - previousProfit;
 
- if (increase > greatestIncrease) {
-   greatestIncrease = increase;
-   dateWithGreatestIncrease = finances[i][0];
- }
+  if (increase > greatestIncrease) {
+    greatestIncrease = increase;
+    dateWithGreatestIncrease = finances[i][0];
+  }
 }
-
 
 // Greatest Decrease
-
-var maxDecrease = 0;
-var decreaseMonth = '';
+var greatestDecrease = 0;
+var dateWithGreatestDecrease = '';
 
 for (var i = 1; i < finances.length; i++) {
- var currentProfit = finances[i][1];
- var previousProfit = finances[i - 1][1];
- var decrease = currentProfit - previousProfit;
+  var currentProfit = finances[i][1];
+  var previousProfit = finances[i - 1][1];
+  var decrease = currentProfit - previousProfit;
 
- if (decrease < maxDecrease) {
-   maxDecrease = decrease;
-   decreaseMonth = finances[i][0];
- }
+  if (decrease < greatestDecrease) {
+    greatestDecrease = decrease;
+    dateWithGreatestDecrease = finances[i][0];
+  }
 }
 
 console.log("Financial Analysis");
 console.log("---------------");
-console.log("Total Months: " + finances.length);
-console.log("Total: $" + totalCash);
+console.log("Total Months: " + totalMonths);
+console.log("Total: $" + totalProfit);
 console.log("Average Change: " + averageChange.toFixed(2));
-console.log('Greatest increase in Profits/Losses is ' + dateWithGreatestIncrease + ' ($' + greatestIncrease + ')');
-console.log('Greatest decresase in Profits/Losses is ' + decreaseMonth + ' ($' + maxDecrease + ')');
+console.log('Greatest Increase in Profits/Losses: ' + dateWithGreatestIncrease + ' ($' + greatestIncrease + ')');
+console.log('Greatest Decrease in Profits/Losses: ' + dateWithGreatestDecrease + ' ($' + greatestDecrease + ')');
