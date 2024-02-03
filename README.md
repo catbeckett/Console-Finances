@@ -29,4 +29,4 @@ The code in the browser with the resulting analysis looks similar to the followi
   ```
 
 ## Screenshot
-![Deloyed-Console-Finance Screenshot](screenshot.png)
+![Deloyed-Console-Finance Screenshot](/Assets/Deloyed-Console-Finance%20Screenshot.png)
