@@ -27,3 +27,6 @@ The code in the browser with the resulting analysis looks similar to the followi
   Greatest Increase in Profits/Losses: Feb-2012 ($1926159)
   Greatest Decrease in Profits/Losses: Sep-2013 ($-2196167)
   ```
+
+## Screenshot
+![Deloyed-Console-Finance Screenshot](screenshot.png)
